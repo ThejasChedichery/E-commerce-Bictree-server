@@ -10,7 +10,7 @@ const LoginValidation = async (req, res, next) => {
             isPasswordValied = await bcrypt.compare(req.body.password, findUser.password)
 
             if (isPasswordValied) {
-                const Token = await jwt.sign({ id: findUser._id, email: findUser.email }, process.env.JWT_SECRET || 'Seclob@2025')
+                const Token = await jwt.sign({ id: findUser._id, email: findUser.email }, process.env.JWT_SECRET || 'Bictree@2025')
                 
                 req.user = {
                     id:findUser._id,
